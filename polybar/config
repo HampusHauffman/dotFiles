@@ -47,16 +47,15 @@ bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
+line-size = 4
 line-color = ${colors.col0}
 
 border-top-size = 8
 border-color = ${colors.primary}
+ 
 
-
-
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = Hack Nerd Font:style=Regular:size=24;5
 
@@ -91,7 +90,7 @@ format = <label>
 ;exec = python /usr/share/polybar/scripts/spotify_status.py -f '{artist}: {song}'
 exec = python /usr/share/polybar/scripts/spotify_status.py  -f '{artist}: {song}' -t 15
 
-;format-underline = #1db954
+format-underline = ${colors.primary}
 click-left = playerctl play-pause &
 click-right = playerctl next &
 
@@ -145,20 +144,7 @@ label-urgent-padding = 2
 ; label-separator = |
 strip-wsnumbers = true
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/cpu]
+[module/mpd[module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = ""
@@ -171,7 +157,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+;format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
@@ -179,9 +165,13 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
+format-connected-background = ${colors.col3}
+format-connected-padding = 2
+
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+;format-connected-underline = #9f78e1
 label-connected = %essid%
+
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -225,7 +215,7 @@ time-alt = %H:%M:%S
 format-prefix =  
 format-prefix-foreground = ${colors.foreground-alt}
 format-background = ${colors.col1}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
 format-padding = 2
 label = %date% %time%
 
@@ -237,16 +227,16 @@ label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 婢
-label-muted-foreground = #666
+label-muted-foreground = ${root.foreground}
 
 bar-volume-width = 7
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.col1}
+bar-volume-foreground-1 = ${colors.col2}
+bar-volume-foreground-2 = ${colors.col3}
+bar-volume-foreground-3 = ${colors.col4}
+bar-volume-foreground-4 = ${colors.col5}
+bar-volume-foreground-5 = ${colors.col6}
+bar-volume-foreground-6 = ${colors.col7}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -255,6 +245,12 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+format-muted-background = ${colors.col1}
+format-muted-padding = 2
+
+format-volume-background = ${colors.col1}
+format-volume-padding = 2
 
 [module/alsa]
 type = internal/alsa
@@ -290,15 +286,23 @@ battery = BAT0
 adapter = AC0
 full-at = 98
 
+
+format-discharging-padding = 2
+format-full-padding = 2
+format-charging-padding = 2
+format-charging-background = ${colors.col2}
+format-full-background = ${colors.col2}
+format-discharging-background = ${colors.col2}
+
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+;format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -331,9 +335,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+;format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%

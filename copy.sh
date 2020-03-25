@@ -7,5 +7,5 @@ cp ~/.bashrc .
 cp ~/.config/fish/config.fish .
 cp ~/.xinitrc .
 cp ~/.Xresources .
-cp -r ~/.config/nvim/* ./nvim
+cp ~/.config/nvim/init.vim .
 
