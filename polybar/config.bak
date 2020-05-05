@@ -31,14 +31,6 @@ col4 = ${xrdb:color4:#222}
 col5 = ${xrdb:color5:#222}
 col6 = ${xrdb:color6:#222}
 col7 = ${xrdb:color7:#222}
-col8 = ${xrdb:color8:#222}
-col9 = ${xrdb:color9:#222}
-col10 = ${xrdb:color10:#222}
-col11 = ${xrdb:color11:#222}
-col12 = ${xrdb:color12:#222}
-col13 = ${xrdb:color13:#222}
-col14 = ${xrdb:color14:#222}
-col15 = ${xrdb:color15:#222}
 ;====================
 
 
@@ -59,23 +51,22 @@ line-size = 4
 line-color = ${colors.col0}
 
 border-top-size = 8
-border-color = ${colors.col8}
+border-color = ${colors.primary}
  
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = Hack Nerd Font:style=Regular:size=24;5
 
 modules-left =i3 
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 ;modules-center = spotify
-modules-right =  pulseaudio wlan battery date 
+modules-right = pulseaudio wlan battery date 
 
 tray-position = right
-tray-padding = 6
-tray-background = ${colors.col0}
-tray-underline = ${colors.col6}
+tray-padding = 3
+tray-background = ${colors.primary}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -124,14 +115,14 @@ wrapping-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.col0}
+label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 ;label-focused = %index%
 label-focused = %name%
-label-focused-background = ${colors.col0}
+label-focused-background = ${colors.primary}
 ;label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.col8}
+label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -174,11 +165,11 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected-background = ${colors.col0}
+format-connected-background = ${colors.col3}
 format-connected-padding = 2
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.col1}
+;format-connected-underline = #9f78e1
 label-connected = %essid%
 
 
@@ -223,8 +214,8 @@ time-alt = %H:%M:%S
 ;
 format-prefix =" "   
 format-prefix-foreground = ${colors.foreground-alt}
-format-background = ${colors.col0}
-format-underline =  ${colors.col3}
+format-background = ${colors.col1}
+;format-underline = #0a6cf5
 format-padding = 2
 label = %date% %time%
 
@@ -255,13 +246,11 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-format-muted-background = ${colors.col0}
+format-muted-background = ${colors.col1}
 format-muted-padding = 2
-format-muted-underline =  ${colors.col4}
 
-format-volume-background = ${colors.col0}
+format-volume-background = ${colors.col1}
 format-volume-padding = 2
-format-volume-underline =  ${colors.col4}
 
 [module/alsa]
 type = internal/alsa
@@ -301,20 +290,19 @@ full-at = 98
 format-discharging-padding = 2
 format-full-padding = 2
 format-charging-padding = 2
-format-charging-background = ${colors.col0}
-format-full-background = ${colors.col0}
-format-discharging-background = ${colors.col0}
+format-charging-background = ${colors.col2}
+format-full-background = ${colors.col2}
+format-discharging-background = ${colors.col2}
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.col2}
+;format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${colors.col2}
-
+;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${colors.col2}
+;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 

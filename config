@@ -54,7 +54,7 @@ bindsym $mod+F2 exec --no-startup-id chromium
 #code
 bindsym $mod+F3 exec --no-startup-id code
 #code
-bindsym $mod+Shift+F3 exec --no-startup-id idea
+bindsym $mod+Shift+F3 exec --no-startup-id intellij-idea-ultimate-edition
 #spotify
 bindsym $mod+F4 exec --no-startup-id spotify --force-device-scale-factor=2
 #Discord
@@ -256,7 +256,7 @@ exec setxkbmap se
 for_window [class=".*"] border pixel 3
 
 smart_gaps on
-gaps inner 10
+gaps inner 15
 gaps outer 0
 
 #hide borders adjacent to the screen
@@ -266,9 +266,9 @@ hide_edge_borders smart
 workspace_auto_back_and_forth yes
 
 
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $pr i3wm.color1 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $fg i3wm.color8 #f0f0f0
+set_from_resource $pr i3wm.color0 #f0f0f0
+set_from_resource $bg i3wm.color0 #f0f0f0 last focsed
 
 # class                 border  backgr. text indicator child_border
 client.focused          $fg     $bg     $fg  $bg       $fg

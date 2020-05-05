@@ -27,6 +27,10 @@ set updatetime=100
 "leader
 :let mapleader = ","
 
+"Spellcheck
+set spelllang=en_us
+setlocal spell
+
 "tabs
 :set tabstop=4
 :set shiftwidth=4
@@ -60,6 +64,7 @@ set rnu
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
+let g:vimtex_quickfix_latexlog = {'default' : 0}
 
 "coc
 " TextEdit might fail if hidden is not set.
