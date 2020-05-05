@@ -53,6 +53,8 @@ bindsym XF86ScreenSaver exec --no-startup-id light -S 5
 bindsym $mod+F2 exec --no-startup-id chromium
 #code
 bindsym $mod+F3 exec --no-startup-id code
+#code
+bindsym $mod+Shift+F3 exec --no-startup-id idea
 #spotify
 bindsym $mod+F4 exec --no-startup-id spotify --force-device-scale-factor=2
 #Discord
@@ -67,6 +69,9 @@ assign [class="Chromium"] $ws2
 
 # Assign code terminals to workspace 2
 assign [class="code-oss"] $ws3
+
+# Assign code terminals to workspace 3
+assign [class="idea"] $ws3
 
 #Assign spotify
 for_window [class="Spotify"] move to workspace $ws4
@@ -218,7 +223,12 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        bindsym Control+Left resize shrink width 30 px or 30 ppt
+        bindsym Control+Down resize grow height 30 px or 30 ppt
+        bindsym Control+Up resize shrink height 30 px or 30 ppt
+        bindsym Control+Right resize grow width 30 px or 30 ppt
+	
+        #back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -246,7 +256,7 @@ exec setxkbmap se
 for_window [class=".*"] border pixel 3
 
 smart_gaps on
-gaps inner 0
+gaps inner 10
 gaps outer 0
 
 #hide borders adjacent to the screen
