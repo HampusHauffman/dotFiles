@@ -1,7 +1,5 @@
 set incsearch
 set visualbell
-set noerrorbells
-set belloff=all
 set clipboard+=unnamedplus
 
 nnoremap ö $
@@ -35,6 +33,7 @@ nnoremap gs :action GotoSuperMethod<CR>
 
 nnoremap <C-o> :action Back<CR>
 nnoremap <C-i> :action Forward<CR>
+
 
 " Inc/Inc-rement selection
 vnoremap <C-k> :action EditorSelectWord<CR>
