@@ -37,3 +37,9 @@ This repository contains my personal dotfiles, managed with `stow`. The configur
 -   **To stow (activate) a configuration:** `stow -t ~ <folder_name>`
 -   **To unstow (deactivate) a configuration:** `stow -D -t ~ <folder_name>`
 -   **To see what `stow` would do without making changes:** `stow -n -t ~ <folder_name>`
+
+### Submodules
+**Load submodules**
+```sh
+git submodule update --init --recursive
+```
